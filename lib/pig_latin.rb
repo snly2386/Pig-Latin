@@ -3,7 +3,11 @@ require "pig_latin/version"
 module PigLatin
   # Your code goes here...
 
-  def self.consonant(word)
+  def self.translate(word)
+
+    if word[/\Ay/] || word[/\A[aeiou]/]
+        word + "way"
+      else 
       second = word[/[^aeiou]+/]
       first = word.sub(second,"")
       ay = "ay"
@@ -12,10 +16,8 @@ module PigLatin
      
   end
 
-  def self.vowel(word)
-      ay = "ay"
-      if word[/\Ay/] || word[/\A[aeiou]/]
-        word + "way"
-      end
-  end
 end
+  
+end
+
+
